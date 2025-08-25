@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escaperum – ITranser</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; color:#333; }
+    header { background:#1976d2; color:#fff; padding:20px; text-align:center; position:relative; }
+    header h1 { margin:0; }
+    .lang-selector { position:absolute; top:20px; right:20px; }
+    .lang-selector img { width:30px; height:20px; margin-left:10px; cursor:pointer; border:1px solid #fff; }
+    .container { max-width:800px; margin:20px auto; padding:0 20px; }
+    .btn { display:inline-block; margin:10px; padding:10px 20px; background:#0d47a1; color:#fff; text-decoration:none; border-radius:4px; }
+    img.hero { width:100%; max-height:300px; object-fit:cover; border-radius:8px; margin-top:20px; }
+    footer { background:#f4f4f4; padding:20px; text-align:center; font-size:14px; }
+    h2 { color:#0d47a1; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Escaperum</h1>
+  <div class="lang-selector">
+    <img src="flags/es.svg" alt="Español" onclick="setLanguage('es')">
+    <img src="flags/gb.svg" alt="English" onclick="setLanguage('en')">
+  </div>
+  <a id="btn-download" class="btn" href="https://play.google.com/store/apps/details?id=com.escaperumapp" target="_blank">Descargar en Play Store</a>
+</header>
+
+<div class="container">
+  <img class="hero" src="images/hero.jpg" alt="Gente trabajando en ordenadores">
+
+  <section id="description"></section>
+  <section id="features"></section>
+</div>
+
+<footer>
+  <p>© 2025 ITranser – All rights reserved.</p>
+</footer>
+
+<script>
+const content = {
+  es: {
+    btn: "Descargar en Play Store",
+    description: `
+      <h2>Descripción</h2>
+      <p>¡Dale vida a tus fiestas con Escaperum! Combina varios modos de juego: Turbo Drink, Nunca lo he hecho, Pareja Picante, ¿Quién es más probable?, Verdad o Reto y Bully. ¡Diversión garantizada para animar tus reuniones!</p>
+    `,
+    features: `
+      <h2>Características</h2>
+      <ul>
+        <li><strong>Modo Turbo Drink:</strong> Desafíos rápidos y bebidas constantes para animar la noche.</li>
+        <li><strong>Nunca lo he hecho:</strong> Revelaciones, secretos y risas.</li>
+        <li><strong>Pareja Picante:</strong> Retos divertidos para parejas o amigos cercanos.</li>
+      </ul>
+    `
+  },
+  en: {
+    btn: "Download on Play Store",
+    description: `
+      <h2>Description</h2>
+      <p>Breathe new life into your parties with Escaperum! This app brings together multiple game modes: Turbo Drink, Never Have I Ever, Spicy Couple, Who’s the Most Likely, Truth or Dare, and Bully. Guaranteed fun to liven up your gatherings!</p>
+    `,
+    features: `
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Turbo Drink Mode:</strong> Fast-paced challenges and constant sipping to kick off the party.</li>
+        <li><strong>Never Have I Ever:</strong> Secrets, revelations, and laughter.</li>
+        <li><strong>Spicy Couple:</strong> Fun and daring challenges for couples or close friends.</li>
+      </ul>
+    `
+  }
+};
+
+function setLanguage(lang) {
+  document.getElementById('btn-download').textContent = content[lang].btn;
+  document.getElementById('description').innerHTML = content[lang].description;
+  document.getElementById('features').innerHTML = content[lang].features;
+}
+
+// Idioma por defecto: español
+setLanguage('es');
+</script>
+
+</body>
+</html>
